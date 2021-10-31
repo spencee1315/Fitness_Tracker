@@ -52,3 +52,15 @@ router.put("/api/workouts/:id", (req, res) => {
             res.status(500).send('Server Error');
         });
 });
+
+// GET - workouts by range
+// route /api/workouts/range
+router.get("/api/workouts/range", (req, res) => {
+
+    db.Workout.find({}).then(dbWorkout => {
+        res.json(dbWorkout);
+    }).catch(err => {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    });
+});
