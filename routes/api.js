@@ -11,9 +11,9 @@ router.get("/api/workouts", (req, res) => {
         dbWorkout.forEach(workout => {
             var total = 0;
             workout.exercises.forEach(e => {
-                total += e.duration;
+                total += e.workoutTime;
             });
-            workout.totalDuration = total;
+            workout.totalWorkoutTime = total;
         });
 
         res.json(dbWorkout);
@@ -33,4 +33,22 @@ router.post("/api/workouts", ({ body }, res ) => {
         console.error(err.message);
         res.status(500).send('Server Error');
     });
+});
+
+// PUT - updated workout
+// route /api/workouts/:id
+router.put("/api/workouts/:id", (req, res) => {
+
+    db.Workout.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+            $inc: { totalWorkoutTime: req.body.workoutTime },
+            $push: { exercises: req.body }
+        },
+        { new: true }).then(dbWorkout => {
+            res.json(dbWorkout);
+        }).catch(err => {
+            console.error(err.message);
+            res.status(500).send('Server Error');
+        });
 });
