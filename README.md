@@ -1,61 +1,86 @@
-# Unit 18 Nosql Homework: Workout Tracker
+# Workout Tracker
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+## Description
 
-## User Story
+For week 18 of the UW Coding Bootcamp my homework invited me to create a workout tracker. I was provided with the front end code and was required to create a Mongo database with a Mongoose schema and handle routes with Express.
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+This application is a fitness tracker that allows a user to create and track daily workouts. A user can log multiple exercises in a workout on a given day. The app has the ability to track the name, type, weight, sets, reps, and duration of an exercise, and there is an option for distance traveled should the exercise be cardio.
 
-## Business Context
+## Built With
 
-A consumer will reach their fitness goals more quickly when they track their workout progress.
+(https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+(https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+(https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+(https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+(https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## Acceptance Criteria
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+## Link to Site GitHub Repo
 
-The user should be able to:
+* [Deployed Site via Heroku](https://hw11-notetaker-uwbootcamp.herokuapp.com/notes)
+* [Github Repo](https://github.com/spencee1315/Fitness_Tracker)
 
-  * Add exercises to the most recent workout plan.
+* Demo of working app via [Screencastify](https://drive.google.com/file/d/16lcG863_pduJfFHh_dnkUF3iTYux-496/view)
+<img src="public/assets/NoteTaker.png">
 
-  * Add new exercises to a new workout plan.
+## Installation 
 
-  * View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
+1. Clone or download repo via Github
+2. Run npm install
+3. Enter node server.js
 
-  * View the total duration of each workout from the past seven workouts on the `stats` page.
+## Usage 
+### Screenshots
 
-> **Important:** Look into using a MongoDB aggregate function to dynamically add up and return the total duration for each workout. Check out the [MongoDB documentation on the $addFields](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/), the [MongoDB documentation on the $sum operator](https://docs.mongodb.com/manual/reference/operator/aggregation/sum/), and the [Mongoose documentation on aggregate functions](https://mongoosejs.com/docs/api.html#aggregate_Aggregate) to learn how it can be accomplished.
+* Homepage - displays last workout
 
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
+* Logging a new workout
 
-  * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
+* Weekly Summary
 
-  * [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)
+## Tests
 
-## Commit Early and Often
+Not applicable.
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for the following two reasons:
+## Snippet
+Route for finding all workouts
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills.
+```
+// GET - all workouts from db
+// route /api/workouts
+router.get("/api/workouts", (req, res) => {
+   
+    db.Workout.find({}).then(dbWorkout => {
+        dbWorkout.forEach(workout => {
+            var total = 0;
+            workout.exercises.forEach(e => {
+                total += e.workoutTime;
+            });
+            workout.totalWorkoutTime = total;
+        });
 
-2. Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
+        res.json(dbWorkout);
+    }) .catch(err => {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    });
+});
+```
 
-Follow these guidelines for committing:
+## License 
+![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
+## Contributing 
+Contributors should read the installation section. 
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
+### Authors
 
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
+* **Elliott Spencer**
 
-* Test your application before you commit to ensure functionality at every step in the development process.
+### Contact Information
 
-We want you to have well over 200 commits by graduation, so commit early and often!
+* [Link to Portfolio Site](https://spencee1315.github.io/hw_wk2/)
 
-## Submission on BCS
+* [Link to Github](https://github.com/spencee1315)
 
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the GitHub repository
+* [Link to LinkedIn](https://www.linkedin.com/in/elliott-spencer-886a9818/)
