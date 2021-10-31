@@ -23,7 +23,7 @@ mongoose.connect(
 );
 
 app.use(require("./routes/api.js"));
-app.use(require("./routes/html.js"));
+app.use(require("./routes/index.js"));
 
 cont PORT = process.env.PORT || 3000;
 app.listen(PORT, () =>
