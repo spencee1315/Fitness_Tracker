@@ -17,8 +17,7 @@ router.get("/api/workouts", (req, res) => {
 
         res.json(dbWorkout);
     }) .catch(err => {
-        console.error(err.message);
-        res.status(500).send('Server Error');
+        res.json(err);
     });
 });
 
@@ -29,8 +28,7 @@ router.post("/api/workouts", ({ body }, res ) => {
     db.Workout.create(body).then((dbWorkout => {
         res.json(dbWorkout);
     })).catch(err => {
-        console.error(err.message);
-        res.status(500).send('Server Error');
+        res.json(err);
     });
 });
 
@@ -47,8 +45,7 @@ router.put("/api/workouts/:id", (req, res) => {
         { new: true }).then(dbWorkout => {
             res.json(dbWorkout);
         }).catch(err => {
-            console.error(err.message);
-            res.status(500).send('Server Error');
+            res.json(err);
         });
 });
 
@@ -59,8 +56,7 @@ router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({}).then(dbWorkout => {
         res.json(dbWorkout);
     }).catch(err => {
-        console.error(err.message);
-        res.status(500).send('Server Error');
+        res.json(err);
     });
 });
 
