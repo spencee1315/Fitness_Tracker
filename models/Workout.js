@@ -1,22 +1,29 @@
+// import mongoose
 const mongoose = require("mongoose");
+// create variable for workout model
 const Schema = mongoose.Schema;
 
+// Workout Schema
 const FitnessTrackerSchema = new Schema({
     day: {
         type: Date,
         default: Date.now
     },
-    exercise: [
+    exercises: [
         {
             type: {
                 type: String,
                 trim: true,
+                required: "Please enter the Exercise Type"
             },
             name: {
                 type: String,
                 trim: true,
+                required: "Please enter the Exercise Name"
             },
-            duration: Number,
+            duration: {
+                type: Number
+            },
             weight: {
                 type: Number,
                 default: 0
@@ -28,7 +35,7 @@ const FitnessTrackerSchema = new Schema({
             sets: {
                 type: Number,
                 default: 0
-            }
+            },
             distance: {
                 type: Number,
                 default: 0
@@ -41,6 +48,7 @@ const FitnessTrackerSchema = new Schema({
     }
 });
 
-const Workout = mongoose.model("Workout", WorkoutSchema);
+// save schema to variable and access with mongoose
+const Workout = mongoose.model("Workout", FitnessTrackerSchema);
 
 module.exports = Workout;
