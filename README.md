@@ -20,8 +20,8 @@ This application is a fitness tracker that allows a user to create and track dai
 * [Deployed Site via Netlify](https://hw11-notetaker-uwbootcamp.herokuapp.com/notes)
 * [Github Repo](https://github.com/spencee1315/Fitness_Tracker)
 
-* Demo of working app via [Screencastify](https://drive.google.com/file/d/16lcG863_pduJfFHh_dnkUF3iTYux-496/view)
-<img src="public/assets/NoteTaker.png">
+* Demo of working app via [Screencastify](https://drive.google.com/file/d/1SuZq8IdDh4pGXpdh-bFVJFXnBJ5ThmJu/view)
+<img src="public/assets/landingpage_fitnesstracker.png">
 
 ## Installation 
 
