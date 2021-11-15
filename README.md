@@ -17,7 +17,7 @@ This application is a fitness tracker that allows a user to create and track dai
 
 ## Link to Site GitHub Repo
 
-* [Deployed Site via Netlify](https://hw11-notetaker-uwbootcamp.herokuapp.com/notes)
+* [Deployed Site via Netlify](https://fitnesstracker-uwcoding.herokuapp.com/)
 * [Github Repo](https://github.com/spencee1315/Fitness_Tracker)
 
 * Demo of working app via [Screencastify](https://drive.google.com/file/d/1SuZq8IdDh4pGXpdh-bFVJFXnBJ5ThmJu/view)
