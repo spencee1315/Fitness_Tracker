@@ -1,19 +1,35 @@
 {
-  "name": "mongoose_skeleton",
+  "name": "Fitness_Tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "seed": "node seeders/seed.js"
+    "seed": "node seeders/seed.js",
+    "build": "netlify-lambda build .",
+    "server": "nodemon server"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Elliott Spencer",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.16.3",
-    "mongoose": "^5.3.16",
-    "morgan": "^1.9.1"
+    "config": "^3.3.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.11",
+    "morgan": "^1.10.0",
+    "netlify-lambda": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spencee1315/Fitness_Tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spencee1315/Fitness_Tracker/issues"
+  },
+  "homepage": "https://github.com/spencee1315/Fitness_Tracker#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
   }
 }

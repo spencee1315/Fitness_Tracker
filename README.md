@@ -33,10 +33,9 @@ This application is a fitness tracker that allows a user to create and track dai
 ### Screenshots
 
 * Homepage - displays last workout
+<img src="public/assets/homepage.initial.png">
 
-* Logging a new workout
-
-* Weekly Summary
+The homepage of the application will display the details of the last workout to the user. From the homepage it will allow the user to choose either to continue the workout or start a new workout. In either case the user is given the option to select either a cardio or lifting exercise to add the their workout. Once chosen the user will input a number details about their exercise chosen which once completed will add that exercise to the current workout. Using the dashboard link at the top of the page a user may view charts of their workouts providing summaries of their 7 most recent workouts.
 
 ## Tests
 
