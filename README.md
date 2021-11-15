@@ -21,7 +21,7 @@ This application is a fitness tracker that allows a user to create and track dai
 * [Github Repo](https://github.com/spencee1315/Fitness_Tracker)
 
 * Demo of working app via [Screencastify](https://drive.google.com/file/d/1SuZq8IdDh4pGXpdh-bFVJFXnBJ5ThmJu/view)
-<img src="public/assets/landingpage_fitnesstracker.png">
+<img src="public/assets/homepage.initial.png">
 
 ## Installation 
 
@@ -32,10 +32,25 @@ This application is a fitness tracker that allows a user to create and track dai
 ## Usage 
 ### Screenshots
 
-* Homepage - displays last workout
-<img src="public/assets/homepage.initial.png">
+* Fitness Tracker
 
 The homepage of the application will display the details of the last workout to the user. From the homepage it will allow the user to choose either to continue the workout or start a new workout. In either case the user is given the option to select either a cardio or lifting exercise to add the their workout. Once chosen the user will input a number details about their exercise chosen which once completed will add that exercise to the current workout. Using the dashboard link at the top of the page a user may view charts of their workouts providing summaries of their 7 most recent workouts.
+
+> Homepage
+
+<img src="public/assets/homepage_pt1.png">
+
+> Create Fitness Routine
+
+<img src="public/assets/add_exercise.png">
+
+> Finished Workout Page
+
+<img src="public/assets/workout_recorded.png">
+
+> Workout Dashboard
+
+<img src="public/assets/Dashboard.png">
 
 ## Tests
 
